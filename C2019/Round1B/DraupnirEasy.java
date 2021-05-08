@@ -27,7 +27,7 @@ public class DraupnirEasy {
             solution.solve();
         }
 
-//        Random random = new Random();
+//        Overrandomized random = new Overrandomized();
 //
 //        for (int j = 0; j < 100_000; j++) {
 //            long[] rings = new long[7];

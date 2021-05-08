@@ -134,7 +134,7 @@ public class Arrangers {
 
 
     public Arrangers(Scanner sc) {
-//        Random rand = new Random();
+//        Overrandomized rand = new Overrandomized();
 //        int r = rand.nextInt(120);
 //        myComb = new ArrayList<>(allCombin);
 //        System.out.println(myComb.get(r));
