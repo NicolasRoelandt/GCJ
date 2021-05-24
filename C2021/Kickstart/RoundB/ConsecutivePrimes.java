@@ -1,14 +1,16 @@
+package C2021.Kickstart.RoundB;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.HashSet;
+import java.math.BigInteger;
 import java.util.Scanner;
-import java.util.Set;
+import java.util.TreeSet;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
 
-public class Template {
-
+public class ConsecutivePrimes {
+    private static final TreeSet<Long> tree = computeAllMult(34000);
 
 
     public static void main(String[] args) {
@@ -17,18 +19,28 @@ public class Template {
         for (int i = 1; i <= t; ++i) {
             int N = Integer.parseInt(in.nextLine());
 
-            for (int j = 0; j < N; j++) {
 
-            }
 
-            String result = "a";
 
-            System.out.println(String.format("Case #%d: %s", i, result));
+            System.out.println(String.format("Case #%d: %d", i, solve(N)));
         }
     }
 
-    private static int solve(){
-        return 0;
+    private static long solve(int n){
+        return tree.floor((long)n);
+    }
+
+
+    public static TreeSet<Long> computeAllMult(int max){
+        long prev = 2;
+        TreeSet<Long> tree = new TreeSet<>();
+        for (long i = 3; i <= max; i++) {
+            if(BigInteger.valueOf(i).isProbablePrime(10)){
+                tree.add(prev*i);
+                prev = i;
+            }
+        }
+        return tree;
     }
 
     public static int[] lineToInt(String line, String regex) {

@@ -1,13 +1,14 @@
+package C2021.Kickstart.RoundA;
+
+import java.awt.datatransfer.StringSelection;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.HashSet;
 import java.util.Scanner;
-import java.util.Set;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
 
-public class Template {
+public class KGoodnessString {
 
 
 
@@ -15,20 +16,20 @@ public class Template {
         Scanner in = new Scanner(new BufferedReader(new InputStreamReader(System.in)));
         int t = Integer.parseInt(in.nextLine());  // Scanner has functions to read ints, longs, strings, chars, etc.
         for (int i = 1; i <= t; ++i) {
-            int N = Integer.parseInt(in.nextLine());
-
-            for (int j = 0; j < N; j++) {
-
-            }
-
-            String result = "a";
-
-            System.out.println(String.format("Case #%d: %s", i, result));
+            int[] line = lineToInt(in.nextLine());
+            int K = line[1];
+            System.out.println(String.format("Case #%d: %d", i, solve(in.nextLine().toCharArray(), K)));
         }
     }
 
-    private static int solve(){
-        return 0;
+    private static int solve(char[] s, int K){
+        int l = s.length;
+        int score = 0;
+        for (int i = 0; i <= (l-1)/2; i++) {
+            if(s[i] != s[l-1-i]) score++;
+        }
+
+        return Math.abs(score-K);
     }
 
     public static int[] lineToInt(String line, String regex) {

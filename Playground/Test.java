@@ -6,34 +6,37 @@ public class Test {
 
 
     public static void main(String[] args) {
-        int max = 100;
-        int N = 50;
-        Random r = new Random();
+        Optional.of(getValue());
 
-        int[] array = new int[50];
-        for (int i = 0; i < 100000000; i++) {
-            for (int j = 0; j < N; j++) {
-                array[j] = r.nextInt(max);
-            }
 
-            double average = Arrays.stream(array).average().getAsDouble();
-
-            int sum = 0;
-
-            for (int j = 1; j < N; j++) {
-                sum += Math.min(array[j-1], array[j]);
-            }
-
-            double value = sum/N;
-
-//            System.out.println("average : " + average);
-//            System.out.println("value : " + value);
-
-            if(value > average){
-                System.out.println("false");
-                System.out.println(Arrays.toString(array));
-            }
-        }
+//        int max = 100;
+//        int N = 50;
+//        Random r = new Random();
+//
+//        int[] array = new int[50];
+//        for (int i = 0; i < 100000000; i++) {
+//            for (int j = 0; j < N; j++) {
+//                array[j] = r.nextInt(max);
+//            }
+//
+//            double average = Arrays.stream(array).average().getAsDouble();
+//
+//            int sum = 0;
+//
+//            for (int j = 1; j < N; j++) {
+//                sum += Math.min(array[j-1], array[j]);
+//            }
+//
+//            double value = sum/N;
+//
+////            System.out.println("average : " + average);
+////            System.out.println("value : " + value);
+//
+//            if(value > average){
+//                System.out.println("false");
+//                System.out.println(Arrays.toString(array));
+//            }
+//        }
 
 
 
@@ -76,6 +79,10 @@ public class Test {
 
 //        System.out.println(findBalancedExpression(")("));
 
+    }
+
+    static String getValue(){
+        return new HashMap<Integer, String>().get(1);
     }
 
     static boolean findBalancedExpression(String str) {

@@ -109,14 +109,14 @@ if t_sol.error_message:
   print("C2021.Round1B.Solution error message:", t_sol.error_message)
 
 if t_sol.return_code:
-  print("A solution finishing with exit code other than 0 (without exceeding "
+  print("Trash.A solution finishing with exit code other than 0 (without exceeding "
         "time or memory limits) would be interpreted as a Runtime Error "
         "in the system.")
 elif t_judge.return_code:
-  print("A solution finishing with exit code 0 (without exceeding time or "
+  print("Trash.A solution finishing with exit code 0 (without exceeding time or "
         "memory limits) and a judge finishing with exit code other than 0 "
         "would be interpreted as a Wrong Answer in the system.")
 else:
-  print("A solution and judge both finishing with exit code 0 (without "
+  print("Trash.A solution and judge both finishing with exit code 0 (without "
         "exceeding time or memory limits) would be interpreted as Correct "
         "in the system.")
