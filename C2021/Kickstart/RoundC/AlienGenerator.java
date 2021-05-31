@@ -58,7 +58,7 @@ public class AlienGenerator {
         // Print the number of 2s that divide n
         while (n%2==0)
         {
-            result.compute(2L, (k, v) -> v == null ? 1 : v+1);
+            result.merge(2L, 1, Integer::sum);
             n /= 2;
         }
 
@@ -69,14 +69,14 @@ public class AlienGenerator {
             // While i divides n, print i and divide n
             while (n%i == 0)
             {
-                result.compute(i, (k, v) -> v == null ? 1 : v+1);
+                result.merge(i, 1, Integer::sum);
                 n /= i;
             }
         }
 
         // This condition is to handle the case when
         // n is a prime number greater than 2
-        if (n > 2) result.compute(n, (k, v) -> v == null ? 1 : v+1);
+        if (n > 2) result.merge(n, 1, Integer::sum);
 
         return result;
     }

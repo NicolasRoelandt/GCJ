@@ -1,3 +1,5 @@
+package C2021.Kickstart.RoundC;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.HashMap;
@@ -7,7 +9,7 @@ import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
 
-public class Solution {
+public class AlienGeneratorUsingEquation {
 
 
 
@@ -49,32 +51,4 @@ public class Solution {
         return Long.toBinaryString(1L << size | value).substring(1, size + 1);
     }
 
-    public static Map<Long, Integer> primeFactors(long n) {
-        Map<Long, Integer> result = new HashMap<>();
-
-        // Print the number of 2s that divide n
-        while (n%2==0)
-        {
-            result.compute(2L, (k, v) -> v == null ? 1 : v+1);
-            n /= 2;
-        }
-
-        // n must be odd at this point.  So we can
-        // skip one element (Note i = i +2)
-        for (long i = 3; i <= Math.sqrt(n); i+= 2)
-        {
-            // While i divides n, print i and divide n
-            while (n%i == 0)
-            {
-                result.compute(i, (k, v) -> v == null ? 1 : v+1);
-                n /= i;
-            }
-        }
-
-        // This condition is to handle the case when
-        // n is a prime number greater than 2
-        if (n > 2) result.compute(n, (k, v) -> v == null ? 1 : v+1);
-
-        return result;
-    }
 }

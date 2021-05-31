@@ -15,7 +15,7 @@
 # in a standalone using one of the following:
 #   1. python3 my_solution.py
 #   2. ./my_solution
-#   3. java C2021.Round1B.Solution
+#   3. java C2021.Round1B.C2021.Kickstart.RoundC.Solution
 #   4. my_solution.exe
 # Then you could run the judge and solution together, using this, as:
 #   1. python interactive_runner.py python3 testing_tool.py 0 -- python3 my_solution.py
@@ -104,9 +104,9 @@ print("Judge return code:", t_judge.return_code)
 if t_judge.error_message:
   print("Judge error message:", t_judge.error_message)
 
-print("C2021.Round1B.Solution return code:", t_sol.return_code)
+print("C2021.Round1B.C2021.Kickstart.RoundC.Solution return code:", t_sol.return_code)
 if t_sol.error_message:
-  print("C2021.Round1B.Solution error message:", t_sol.error_message)
+  print("C2021.Round1B.C2021.Kickstart.RoundC.Solution error message:", t_sol.error_message)
 
 if t_sol.return_code:
   print("Trash.A solution finishing with exit code other than 0 (without exceeding "
